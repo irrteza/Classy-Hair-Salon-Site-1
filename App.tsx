@@ -8,7 +8,6 @@ import { Services } from './components/Services';
 import { GiftCard } from './components/GiftCard';
 import { Testimonials } from './components/Testimonials';
 import { Footer } from './components/Footer';
-import { Chatbot } from './components/Chatbot';
 
 const App: React.FC = () => {
   useLenis();
@@ -25,7 +24,6 @@ const App: React.FC = () => {
         <Testimonials />
       </main>
       <Footer />
-      <Chatbot />
     </div>
   );
 };
