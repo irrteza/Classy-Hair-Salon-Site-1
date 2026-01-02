@@ -38,7 +38,7 @@ export const Navigation: React.FC = () => {
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-700 border-b ${
           isScrolled 
             ? 'bg-cream/80 backdrop-blur-xl border-stone/20 py-4 shadow-sm' 
-            : 'bg-transparent border-transparent py-8'
+            : 'bg-black/20 backdrop-blur-md border-white/5 py-8'
         }`}
       >
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -50,7 +50,7 @@ export const Navigation: React.FC = () => {
             }`}
           >
              {/* Italianno is smaller by default, bumped up size */}
-             <h1 className={`font-cursive text-4xl sm:text-5xl md:text-6xl whitespace-nowrap transition-all duration-500 group-hover:opacity-80 pt-2 ${!isScrolled && !mobileMenuOpen ? 'drop-shadow-[0_1px_3px_rgba(0,0,0,0.2)]' : ''}`}>
+             <h1 className={`font-cursive text-3xl sm:text-4xl md:text-5xl whitespace-nowrap transition-all duration-500 group-hover:opacity-80 pt-2 ${!isScrolled && !mobileMenuOpen ? 'drop-shadow-[0_1px_3px_rgba(0,0,0,0.2)]' : ''}`}>
                 Classy Hair Salon
              </h1>
           </a>

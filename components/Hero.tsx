@@ -40,6 +40,12 @@ export const Hero: React.FC = () => {
             </h1>
             </Reveal>
 
+            <Reveal delay={0.5}>
+              <p className="font-serif italic text-xl md:text-2xl text-white/80 mt-4 ml-2 tracking-wide">
+                By Lien Lu
+              </p>
+            </Reveal>
+
             <div className="flex flex-col md:flex-row items-start md:items-end gap-12 mt-12 border-t border-white/20 pt-8">
                 <Reveal delay={0.6} width="100%">
                     <p className="font-sans text-white/80 text-sm uppercase tracking-[0.25em] leading-loose max-w-sm font-medium">
