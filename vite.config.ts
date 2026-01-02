@@ -4,11 +4,12 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   // Load env file based on `mode` in the current working directory.
-  // Set the third parameter to '' to load all env regardless of the `VITE_` prefix.
-  // Fix: Cast process to any to resolve TS error "Property 'cwd' does not exist on type 'Process'"
+  // Cast process to any to avoid TS error: Property 'cwd' does not exist on type 'Process'
   const env = loadEnv(mode, (process as any).cwd(), '');
+  
   return {
     plugins: [react()],
+    base: '/', // Ensures the site loads correctly on the root path
     define: {
       // This ensures your code using process.env.API_KEY works in the browser
       'process.env.API_KEY': JSON.stringify(env.API_KEY)
