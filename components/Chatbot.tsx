@@ -39,29 +39,27 @@ export const Chatbot: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const model = ai.models.getGenerativeModel({ 
-        model: "gemini-2.5-flash-preview",
-        systemInstruction: `You are the virtual concierge for 'Classy Hair Salon', a high-end luxury salon in Medford, MA (241 Boston Ave). 
+      // Use ai.models.generateContent instead of deprecated getGenerativeModel
+      const response = await ai.models.generateContent({
+        model: "gemini-3-flash-preview",
+        config: {
+          systemInstruction: `You are the virtual concierge for 'Classy Hair Salon', a high-end luxury salon in Medford, MA (241 Boston Ave). 
         Your tone is sophisticated, polite, warm, and professional. 
         You help clients with:
         1. Services: Precision Cuts, Color Artistry (Balayage, Foils), Texture & Care (Keratin).
         2. Hours: Mon-Sat 10am-7pm, Sun Closed.
         3. Booking: You cannot book directly. Politely encourage them to call 617-259-8510.
         4. Founder: Lien Lu, 20+ years experience.
-        Keep responses concise and elegant.` 
-      });
-
-      // Construct history for context
-      // Note: For a simple chat, we just send the latest prompt or a small history window
-      // The SDK's ChatSession is better for full history, but single turn is fine for this demo.
-      const result = await model.generateContent({
+        Keep responses concise and elegant.`
+        },
         contents: [
             ...messages.map(m => ({ role: m.role, parts: [{ text: m.text }] })),
             { role: 'user', parts: [{ text: userMessage }] }
         ]
       });
       
-      const responseText = result.response.text();
+      // Access text property directly, do not call text() method
+      const responseText = response.text || "I apologize, I am unable to provide a response at this moment.";
       setMessages(prev => [...prev, { role: 'model', text: responseText }]);
     } catch (error) {
       console.error("Chat Error", error);

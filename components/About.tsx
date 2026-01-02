@@ -13,22 +13,40 @@ export const About: React.FC = () => {
                 {/* Main Image - Stylist working */}
                 <div className="w-[80%] absolute top-0 left-0 h-[80%] overflow-hidden">
                      <Reveal width="100%" className="h-full">
-                        <img 
-                            src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?q=80&w=2000&auto=format&fit=crop" 
-                            alt="Stylist working on client" 
-                            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
-                        />
+                        <div className="relative w-full h-full">
+                            <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none p-4">
+                                <div className="bg-black/30 backdrop-blur-sm border border-white/10 px-3 py-2 rounded-sm">
+                                    <p className="font-sans text-[10px] uppercase tracking-widest text-white/80 text-center">
+                                        this picture will be replaced with your actual salon images
+                                    </p>
+                                </div>
+                            </div>
+                            <img 
+                                src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?q=80&w=2000&auto=format&fit=crop" 
+                                alt="Stylist working on client" 
+                                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-1000"
+                            />
+                        </div>
                      </Reveal>
                 </div>
 
                 {/* Overlapping Detail Image - Hair texture */}
                 <div className="w-[50%] absolute bottom-0 right-0 h-[45%] overflow-hidden shadow-2xl border-8 border-cream">
                     <Reveal delay={0.3} width="100%" className="h-full">
-                         <img 
-                            src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1600&auto=format&fit=crop" 
-                            alt="Styling Detail" 
-                            className="w-full h-full object-cover"
-                        />
+                        <div className="relative w-full h-full">
+                            <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none p-2">
+                                <div className="bg-black/30 backdrop-blur-sm border border-white/10 px-2 py-1 rounded-sm">
+                                    <p className="font-sans text-[8px] uppercase tracking-widest text-white/80 text-center leading-tight">
+                                        this picture will be replaced with your actual salon images
+                                    </p>
+                                </div>
+                            </div>
+                             <img 
+                                src="https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1600&auto=format&fit=crop" 
+                                alt="Styling Detail" 
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
                     </Reveal>
                 </div>
             </div>

@@ -34,14 +34,11 @@ export const Navigation: React.FC = () => {
 
   return (
     <>
-      <motion.nav 
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+      <nav 
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-700 border-b ${
           isScrolled 
-            ? 'bg-cream/70 backdrop-blur-xl border-stone/20 py-4 shadow-sm' 
-            : 'bg-white/5 backdrop-blur-md border-transparent py-8'
+            ? 'bg-cream/80 backdrop-blur-xl border-stone/20 py-4 shadow-sm' 
+            : 'bg-transparent border-transparent py-8'
         }`}
       >
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
@@ -100,7 +97,7 @@ export const Navigation: React.FC = () => {
             )}
           </button>
         </div>
-      </motion.nav>
+      </nav>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>

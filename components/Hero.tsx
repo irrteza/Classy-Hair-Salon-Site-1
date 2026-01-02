@@ -2,7 +2,6 @@ import React from 'react';
 import { Reveal } from './ui/Reveal';
 import { Button } from './ui/Button';
 import { ChevronDown } from 'lucide-react';
-import { motion } from 'framer-motion';
 
 export const Hero: React.FC = () => {
   const scrollToServices = () => {
@@ -14,21 +13,14 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden bg-charcoal">
-      {/* Background Visual - Premium Female Portrait with Slow Zoom */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
+      {/* Background Visual - Premium Female Portrait */}
+      <div className="absolute inset-0 w-full h-full">
          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 z-10" /> 
-        <motion.img 
+         
+        <img 
           src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=2669&auto=format&fit=crop"
           alt="Classy Hair Salon Editorial Portrait"
-          className="w-full h-full object-cover object-[50%_20%] opacity-90"
-          initial={{ scale: 1 }}
-          animate={{ scale: 1.1 }}
-          transition={{ 
-            duration: 20, 
-            ease: "linear", 
-            repeat: Infinity, 
-            repeatType: "reverse" 
-          }}
+          className="w-full h-full object-cover object-[50%_20%] animate-subtle-zoom opacity-90"
         />
       </div>
 
@@ -49,7 +41,7 @@ export const Hero: React.FC = () => {
             </Reveal>
 
             <div className="flex flex-col md:flex-row items-start md:items-end gap-12 mt-12 border-t border-white/20 pt-8">
-                <Reveal delay={0.6}>
+                <Reveal delay={0.6} width="100%">
                     <p className="font-sans text-white/80 text-sm uppercase tracking-[0.25em] leading-loose max-w-sm font-medium">
                         Serving Medford<br />
                         Bespoke Styling<br />
@@ -65,21 +57,6 @@ export const Hero: React.FC = () => {
             </div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div 
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 text-white/50"
-        initial={{ opacity: 0, y: -10 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 1 }}
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        >
-          <ChevronDown size={32} />
-        </motion.div>
-      </motion.div>
     </section>
   );
 };

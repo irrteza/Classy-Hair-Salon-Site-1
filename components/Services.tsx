@@ -58,12 +58,22 @@ export const Services: React.FC = () => {
                 {/* Image Container - Female Specific */}
                 <div className="relative aspect-[3/4] overflow-hidden bg-offBlack mb-8">
                      <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-700 z-10" />
+                     
+                     {/* Placeholder Text Overlay */}
+                     <div className="absolute inset-0 z-20 flex items-center justify-center pointer-events-none p-4">
+                        <div className="bg-black/30 backdrop-blur-sm border border-white/10 px-3 py-2 rounded-sm">
+                            <p className="font-sans text-[10px] uppercase tracking-widest text-white/80 text-center">
+                                this picture will be replaced with your actual salon images
+                            </p>
+                        </div>
+                     </div>
+
                      <img 
                         src={serviceImages[index]} 
                         className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1.5s] ease-out" 
                         alt={service.title} 
                      />
-                     <div className="absolute top-6 right-6 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                     <div className="absolute top-6 right-6 z-30 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         <ArrowRight className="text-white -rotate-45" size={24} />
                      </div>
                 </div>
@@ -98,7 +108,7 @@ export const Services: React.FC = () => {
                     <span className="text-xl font-sans font-bold lowercase text-white">amika:</span>
                  </div>
                  
-                 <div className="mt-20 flex justify-center">
+                 <div className="mt-20">
                      <Button href="tel:6172598510" variant="outline" className="border-white/30 text-white hover:bg-white hover:text-black hover:border-white">
                         Book a Consultation
                     </Button>

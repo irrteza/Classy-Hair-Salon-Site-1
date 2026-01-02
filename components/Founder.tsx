@@ -53,7 +53,7 @@ export const Founder: React.FC = () => {
                       <div className="absolute inset-0 z-20 flex items-center justify-center p-8 pointer-events-none">
                           <div className="bg-charcoal/60 backdrop-blur-sm p-4 text-center border border-white/20 shadow-xl rounded-sm">
                              <p className="font-sans text-xs uppercase tracking-widest text-white/90">
-                                Lien Lu's professional picture will be added
+                                this picture will be replaced with your actual salon images
                              </p>
                           </div>
                       </div>
